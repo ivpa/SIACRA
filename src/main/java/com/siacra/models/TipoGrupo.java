@@ -6,10 +6,12 @@
 package com.siacra.models;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -21,18 +23,20 @@ import javax.persistence.Table;
 public class TipoGrupo implements Serializable{
     
     @Id
-    @GeneratedValue
     @Column(name="idtipogrupo", nullable=false)
-    int idtipogrupo;
+    String idtipogrupo;
     
     @Column(name="tipodegrupo",nullable = false, length = 25)
     String tipodegrupo;
+    
+    @OneToMany(mappedBy="idtipogrupo")
+    private Set<Grupo> grupo;
 
-    public int getIdtipogrupo() {
+    public String getIdtipogrupo() {
         return idtipogrupo;
     }
 
-    public void setIdtipogrupo(int idtipogrupo) {
+    public void setIdtipogrupo(String idtipogrupo) {
         this.idtipogrupo = idtipogrupo;
     }
 
@@ -43,5 +47,15 @@ public class TipoGrupo implements Serializable{
     public void setTipodegrupo(String tipodegrupo) {
         this.tipodegrupo = tipodegrupo;
     }
+
+    public Set<Grupo> getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Set<Grupo> grupo) {
+        this.grupo = grupo;
+    }
+    
+    
     
 }

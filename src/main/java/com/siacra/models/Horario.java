@@ -55,6 +55,4 @@ public class Horario implements Serializable{
         this.dia = dia;
     }
     
-    
-    
 }
