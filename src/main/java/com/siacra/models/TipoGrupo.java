@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -26,8 +25,8 @@ public class TipoGrupo implements Serializable{
     @Column(name="idtipogrupo", nullable=false)
     String idtipogrupo;
     
-    @Column(name="tipodegrupo",nullable = false, length = 25)
-    String tipodegrupo;
+    @Column(name="nombregrupo",nullable = false, length = 25)
+    String nombregrupo;
     
     @OneToMany(mappedBy="idtipogrupo")
     private Set<Grupo> grupo;
@@ -40,12 +39,12 @@ public class TipoGrupo implements Serializable{
         this.idtipogrupo = idtipogrupo;
     }
 
-    public String getTipodegrupo() {
-        return tipodegrupo;
+    public String getNombreGrupo() {
+        return nombregrupo;
     }
 
-    public void setTipodegrupo(String tipodegrupo) {
-        this.tipodegrupo = tipodegrupo;
+    public void setNombreGrupo(String tipodegrupo) {
+        this.nombregrupo = tipodegrupo;
     }
 
     public Set<Grupo> getGrupo() {

@@ -6,10 +6,12 @@
 package com.siacra.models;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -30,6 +32,9 @@ public class Horario implements Serializable{
     
     @Column(name="dia",nullable=false,length = 50)
     String dia;
+    
+    @OneToMany(mappedBy="idhorario")
+    private Set<Oferta> oferta;
 
     public int getIdnivelacceso() {
         return idnivelacceso;
