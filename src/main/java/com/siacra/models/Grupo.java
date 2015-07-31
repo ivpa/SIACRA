@@ -26,30 +26,30 @@ public class Grupo implements Serializable{
     
     @Id
     @GeneratedValue
-    int idgrupo;
+    int idGrupo;
     
     @Column(name="cupo", nullable = true)
     int cupo;
     
     @Column(name = "numerogrupo", nullable = true )
-    int numerogrupo;
+    int numeroGrupo;
     
     @Column(name = "", nullable = true)
-    boolean aprobargrupo;
+    boolean aprobarGrupo;
     
     @ManyToOne
     @JoinColumn(name="idtipogrupo")
-    private TipoGrupo idtipogrupo;
+    private TipoGrupo idTipoGrupo;
     
     @OneToMany(mappedBy="idgrupo")
     private Set<Oferta> oferta;
 
-    public int getIdgrupo() {
-        return idgrupo;
+    public int getIdGrupo() {
+        return idGrupo;
     }
 
-    public void setIdgrupo(int idgrupo) {
-        this.idgrupo = idgrupo;
+    public void setIdGrupo(int idGrupo) {
+        this.idGrupo = idGrupo;
     }
 
     public int getCupo() {
@@ -60,28 +60,39 @@ public class Grupo implements Serializable{
         this.cupo = cupo;
     }
 
-    public int getNumerogrupo() {
-        return numerogrupo;
+    public int getNumeroGrupo() {
+        return numeroGrupo;
     }
 
-    public void setNumerogrupo(int numerogrupo) {
-        this.numerogrupo = numerogrupo;
+    public void setNumeroGrupo(int numeroGrupo) {
+        this.numeroGrupo = numeroGrupo;
     }
 
-    public boolean isAprobargrupo() {
-        return aprobargrupo;
+    public boolean isAprobarGrupo() {
+        return aprobarGrupo;
     }
 
-    public void setAprobargrupo(boolean aprobargrupo) {
-        this.aprobargrupo = aprobargrupo;
+    public void setAprobarGrupo(boolean aprobarGrupo) {
+        this.aprobarGrupo = aprobarGrupo;
     }
 
-    public TipoGrupo getIdtipogrupo() {
-        return idtipogrupo;
+    public TipoGrupo getIdTipoGrupo() {
+        return idTipoGrupo;
     }
 
-    public void setIdtipogrupo(TipoGrupo idtipogrupo) {
-        this.idtipogrupo = idtipogrupo;
+    public void setIdTipoGrupo(TipoGrupo idTipoGrupo) {
+        this.idTipoGrupo = idTipoGrupo;
     }
-        
+
+    public Set<Oferta> getOferta() {
+        return oferta;
+    }
+
+    public void setOferta(Set<Oferta> oferta) {
+        this.oferta = oferta;
+    }
+    
+    
+    
+    
 }
