@@ -58,7 +58,7 @@ public class TipoGrupoService {
     }
     
     //Seleccionamos todos los tipos de grupos existentes
-    public List<TipoGrupo> getDocentes() {
+    public List<TipoGrupo> getTipoGrupos() {
         return getTipoGrupoDao().getTipoGrupos();
     }
     
